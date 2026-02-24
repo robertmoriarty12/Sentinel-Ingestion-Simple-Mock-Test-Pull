@@ -1,0 +1,51 @@
+{
+  "name": "MockAPIDevicesDCR",
+  "apiVersion": "2021-09-01-preview",
+  "location": "[parameters('workspace-location')]",
+  "type": "Microsoft.Insights/dataCollectionRules",
+  "properties": {
+    "dataCollectionEndpointId": "[concat('/subscriptions/',parameters('subscription'),'/resourceGroups/',parameters('resourceGroupName'),'/providers/Microsoft.Insights/dataCollectionEndpoints/',parameters('workspace'))]",
+    "streamDeclarations": {
+      "Custom-MockAPIDevicesStream": {
+        "columns": [
+          {
+            "name": "timestamp",
+            "type": "string"
+          },
+          {
+            "name": "os",
+            "type": "string"
+          },
+          {
+            "name": "hostname",
+            "type": "string"
+          },
+          {
+            "name": "ip_address",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "destinations": {
+      "logAnalytics": [
+        {
+          "workspaceResourceId": "not important. changed by the script",
+          "name": "LogAnalyticsDestination"
+        }
+      ]
+    },
+    "dataFlows": [
+      {
+        "streams": [
+          "Custom-MockAPIDevicesStream"
+        ],
+        "destinations": [
+          "LogAnalyticsDestination"
+        ],
+        "transformKql": "source | extend TimeGenerated = todatetime(timestamp) | project TimeGenerated, OperatingSystem = os, Hostname = hostname, IpAddress = ip_address",
+        "outputStream": "Custom-MockAPIDevices_CL"
+      }
+    ]
+  }
+}

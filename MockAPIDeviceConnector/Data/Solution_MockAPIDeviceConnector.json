@@ -1,0 +1,18 @@
+{
+  "Name": "MockAPIDeviceConnector",
+  "Author": "Test Publisher - test@example.com",
+  "Logo": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/Azure_Sentinel.svg\" width=\"75px\" height=\"75px\">",
+  "Description": "The Mock API Device Connector solution provides the ability to ingest device data from a mock API endpoint into Microsoft Sentinel for testing and demonstrating the Codeless Connector Framework (CCF) capabilities. This solution is designed for testing and development purposes.\n\n**Underlying Microsoft Technologies used:**\n\nThis solution takes a dependency on the following technologies:\n\na. [Azure Monitor Data Collection Rules (DCR)](https://docs.microsoft.com/azure/azure-monitor/essentials/data-collection-rule-overview)\n\nb. [Codeless Connector Platform (CCP)](https://docs.microsoft.com/azure/sentinel/create-codeless-connector)",
+  "Data Connectors": [
+    "Data Connectors/MockAPI_ccp/connectorDefinition.json"
+  ],
+  "Workbooks": [],
+  "Parsers": [],
+  "Analytic Rules": [],
+  "Hunting Queries": [],
+  "BasePath": "C:\\GitHub\\Azure-Sentinel\\Solutions\\MockAPIDeviceConnector",
+  "Version": "3.0.0",
+  "Metadata": "SolutionMetadata.json",
+  "TemplateSpec": true,
+  "Is1PConnector": false
+}

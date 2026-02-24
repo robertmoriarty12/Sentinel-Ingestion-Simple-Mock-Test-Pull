@@ -1,0 +1,32 @@
+{
+  "name": "MockAPIDevices_CL",
+  "type": "Microsoft.OperationalInsights/workspaces/tables",
+  "apiVersion": "2021-03-01-privatepreview",
+  "properties": {
+    "schema": {
+      "name": "MockAPIDevices_CL",
+      "columns": [
+        {
+          "name": "TimeGenerated",
+          "type": "datetime",
+          "description": "The timestamp when the record was generated"
+        },
+        {
+          "name": "OperatingSystem",
+          "type": "string",
+          "description": "Operating system of the device"
+        },
+        {
+          "name": "Hostname",
+          "type": "string",
+          "description": "Hostname of the device"
+        },
+        {
+          "name": "IpAddress",
+          "type": "string",
+          "description": "IP address of the device"
+        }
+      ]
+    }
+  }
+}
